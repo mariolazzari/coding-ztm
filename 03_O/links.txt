@@ -1,3 +1,5 @@
 https://replit.com/
 https://glot.io/
 https://zerotomastery.io/cheatsheets/big-o-cheat-sheet/?utm_source=udemy&utm_medium=coursecontent
+https://www.bigocheatsheet.com/
+https://stackoverflow.com/questions/3953244/example-of-on

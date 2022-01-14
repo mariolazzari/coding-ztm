@@ -36,7 +36,7 @@ findNemo(nemo);
 findNemo(everyone);
 findNemo(large);
 
-const boxes = [0, 1, 2, 3, 4, 5];
+let boxes = [0, 1, 2, 3, 4, 5];
 
 // O(n)
 function compressAll(boxes) {
@@ -45,7 +45,7 @@ function compressAll(boxes) {
   });
 }
 
-// O(1)
+// O(1) => constant
 function compressOne(box) {
   console.log("Constant compressing...", box);
 }
@@ -58,3 +58,18 @@ function logFirst2(array) {
   console.log(array[1]); // O(1)
 }
 logFirst2(boxes); // O(1)
+
+// O(n^2) => quadratic
+boxes = ["a", "b", "c", "d", "e"];
+
+function logAllPairs(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+      console.log(array[i], array[j]);
+    }
+  }
+}
+
+logAllPairs(boxes);
+
+// O(n + n^2) => (n^2)
