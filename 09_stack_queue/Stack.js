@@ -30,7 +30,19 @@ class Stack {
 
   // O(1)
   pop() {
+    if (!this.top) {
+      return null;
+    }
+
+    if (this.top === this.bottom) {
+      this.bottom = null;
+    }
+
+    const oldTop = this.top;
+    this.top = this.top.next;
     this.length--;
+
+    return oldTop;
   }
 
   // O(1)
