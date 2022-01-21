@@ -1,1 +1,5 @@
 https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr
+https://visualgo.net/en/dfsbfs?slide=1
+https://leetcode.com/problems/validate-binary-search-tree/
+https://visualgo.net/en/dfsbfs?slide=1
+https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e

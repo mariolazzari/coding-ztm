@@ -1,4 +1,3 @@
-// Breadth First Search
 class Node {
   constructor(value) {
     this.left = null;
@@ -85,10 +84,11 @@ class BinarySearchTree {
 
           //Option 2: Right child which doesnt have a left child
         } else if (currentNode.right.left === null) {
-          currentNode.right.left = currentNode.left;
           if (parentNode === null) {
-            this.root = currentNode.right;
+            this.root = currentNode.left;
           } else {
+            currentNode.right.left = currentNode.left;
+
             //if parent > current, make right child of the left the parent
             if (currentNode.value < parentNode.value) {
               parentNode.left = currentNode.right;
@@ -128,6 +128,40 @@ class BinarySearchTree {
       }
     }
   }
+  BreadthFirstSearch() {
+    let currentNode = this.root;
+    let list = [];
+    let queue = [];
+    queue.push(currentNode);
+
+    while (queue.length > 0) {
+      currentNode = queue.shift();
+      list.push(currentNode.value);
+      if (currentNode.left) {
+        queue.push(currentNode.left);
+      }
+      if (currentNode.right) {
+        queue.push(currentNode.right);
+      }
+    }
+    return list;
+  }
+  BreadthFirstSearchR(queue, list) {
+    if (!queue.length) {
+      return list;
+    }
+    const currentNode = queue.shift();
+    list.push(currentNode.value);
+
+    if (currentNode.left) {
+      queue.push(currentNode.left);
+    }
+    if (currentNode.right) {
+      queue.push(currentNode.right);
+    }
+
+    return this.BreadthFirstSearchR(queue, list);
+  }
 }
 
 const tree = new BinarySearchTree();
@@ -138,8 +172,9 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
-tree.remove(170);
-JSON.stringify(traverse(tree.root));
+
+console.log("BFS", tree.BreadthFirstSearch());
+console.log("BFS", tree.BreadthFirstSearchR([tree.root], []));
 
 //     9
 //  4     20
